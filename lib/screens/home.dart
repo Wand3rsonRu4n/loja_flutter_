@@ -83,23 +83,15 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kTertiaryColor,
-      appBar: AppBar(
-        toolbarHeight: 75,
-        leading: Padding(
-          padding: EdgeInsets.only(left: 14.0),
-        ),
-        centerTitle: true,
-        title: Text(
-          "CALANGO",
-          style: TextStyle(
-            fontSize: 16.0,
-            fontWeight: FontWeight.w400,
-          ),
-        ),
-      ),
       body: Column(
-        children: [
+        children: <Widget>[
+          Image.asset(
+            'assets/logo.png',
+            width: 60,
+            height: 60,
+          )
           // Build Search Input
+          ,
           SearchField(),
           CarouselWidget(
             carouselController: carouselCtrl,
@@ -110,7 +102,6 @@ class _HomeScreenState extends State<HomeScreen> {
               });
             },
           ),
-
           CarouselIndicator(
             carouselController: carouselCtrl,
             banners: banners,
@@ -143,7 +134,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-
           ProductGridView(
             controller: ScrollController(),
             productData: ProductData.products
